@@ -2,7 +2,6 @@ package com.ioreo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.AnswerInlineQuery;
@@ -69,12 +68,10 @@ public class GoogleBot extends TelegramLongPollingBot{
                     CustomSearchAPI customSearchAPI = new CustomSearchAPI.Builder(new NetHttpTransport(), new GsonFactory(), null).setApplicationName("UniGoogleBot for Telegram").build();
                     Search resultSearch = null;
                     try {
-                        Random r = new Random();
-                        int n = r.nextInt(Config.GoogleApiCX.length-1);
                         CustomSearchAPI.Cse.List seacher = customSearchAPI.cse().list();
                         seacher.setQ(query);
                         seacher.setKey(Config.GoogleApiToken);
-                        seacher.setCx(Config.GoogleApiCX[n]);
+                        seacher.setCx(Config.GoogleApiCX);
                         seacher.setNum(8);
                         resultSearch = seacher.execute();
                     } catch (Exception e) {
