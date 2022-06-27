@@ -1,0 +1,7 @@
+{
+    "name": "UniOreo's Google Bot for Telegram",
+    "description": "Make it possible to search in Telegram",
+    "repository": "https://github.com/wh2004/GoogleBot4Telegram",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/240px-Google_%22G%22_Logo.svg.png",
+    "keywords": ["Telegram", "Google", "UniOreo", "Bot"]
+  }
