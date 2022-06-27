@@ -72,7 +72,20 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
-        
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+              <archive>
+                  <manifest>
+                      <addClasspath>true</addClasspath>
+                      <classpathPrefix>lib/</classpathPrefix>
+                      <mainClass>com.ioreo.BotMain</mainClass>
+                  </manifest>
+              </archive>
+          </configuration>
+        </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
@@ -91,40 +104,19 @@
           <version>3.0.0</version>
         </plugin>
 
-        <!-- Copy dependency libraries jar files to a separated LIB folder -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <configuration>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
-              <excludeTransitive>false</excludeTransitive> 
-              <stripVersion>false</stripVersion>
-          </configuration>
+          <version>3.0.1</version>
           <executions>
               <execution>
                   <id>copy-dependencies</id>
                   <phase>package</phase>
-                  <goals>
-                      <goal>copy-dependencies</goal>
-                  </goals>
+                  <goals><goal>copy-dependencies</goal></goals>
               </execution>
           </executions>
         </plugin>
-      <!-- Add LIB folder to classPath -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.0.2</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <classpathPrefix>lib/</classpathPrefix>
-                        <mainClass>com.ioreo.BotMain</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
+        
       </plugins>
     </pluginManagement>
   </build>
