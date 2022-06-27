@@ -3,5 +3,37 @@
     "description": "Make it possible to search in Telegram",
     "repository": "https://github.com/wh2004/GoogleBot4Telegram",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/240px-Google_%22G%22_Logo.svg.png",
-    "keywords": ["Telegram", "Google", "UniOreo", "Bot"]
+    "keywords": ["Telegram", "Google", "UniOreo", "Bot"],
+    "env": {
+        "BOT_NAME": {
+          "description": "Bot用户名，不加@",
+          "value": "GoogleBot4Telegram"
+        },
+        "BOT_TOKEN": {
+          "description": "BotFather那里获取的BotToken",
+          "value": "BotToken"
+        },
+        "API_KEY": {
+          "description": "GCP中的开发者API密钥",
+          "value": "GoogleAPIKey"
+        },
+        "SEARCH_ID": {
+          "description": "Google搜索引擎的ID",
+          "value": "GoogleSearchEngineID"
+        },
+        "OWNER_ID": {
+          "description": "主人的chatID",
+          "value": "OwnerChatID"
+        },
+        "WHITE_LIST": {
+          "description": "可使用者白名单，任意符号分割",
+          "value": "UserChatID"
+        },
+        "MAVEN_CUSTOM_GOALS": {
+          "description": "编译变量，勿修改",
+          "value": "clean assembly:assembly"
+        }
+        
+
+    }
   }
