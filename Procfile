@@ -1,1 +1,1 @@
-worker: java -jar target/googlebot-1.0.0-Rebuild.jar
+worker: java -jar target/googlebot-1.0.0-Rebuild-jar-with-dependencies.jar
