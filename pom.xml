@@ -114,13 +114,13 @@
             </execution>
           </executions>
           <configuration>
+            <archive>
+              <manifest>
+              <mainClass>com.ioreo.BotMain</mainClass>
+              </manifest>
+            </archive>
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
-              <archive>
-                <manifest>
-                <mainClass>com.ioreo.BotMain</mainClass>
-                </manifest>
-              </archive>
             </descriptorRefs>
           </configuration>
         </plugin>
